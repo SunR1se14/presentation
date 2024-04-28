@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+      <section>
+        <h1 style="font-size: 100px;"><span style="color: #0c27ff;">Video API</span><br> in JavaScript</h1>
+        <p style="font-size: 36px;">Presentation about Video API and its usage in JavaScript</p>
+    </section>
+    <section>
+        <section>
+            <h2>What is <span style="color: #0c27ff;">Video API</span>?</h2>
+            <ul>
+                <li>Definition of Video API.</li>
+                <li>Role of Video API in web development.</li>
+                <li>Advantages of using Video API.</li>
+            </ul>
+        </section>
+        <section>
+            <h4>Definition of <span style="color: #0c27ff;">Video API</span></h4>
+            <p style="font-size: 20px;">
+                Video API is a set of methods and tools provided by the browser or web platform that allows developers to control video content on web pages using JavaScript.
+            </p>
+        </section>
+        <section>
+            <h4>Role of <span style="color: #0c27ff;">Video API</span> in web development.</h4>
+            <p style="font-size: 20px;">
+                Video API plays a key role in enhancing user interaction with websites and web applications.
+            </p>
+        </section>
+        <section>
+            <h4>Advantages of using <span style="color: #0c27ff;">Video API</span></h4>
+            <ul style="font-size: 24px; margin-bottom: 25px;">
+                <li>Flexibility and control</li>
+                <li>Improved user experience</li>
+                <li>Compatibility and accessibility</li>
+                <li>Scalability and integration possibilities</li>
+            </ul>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Key Functions of <span style="color: #0c27ff;">Video API</span></h2>
+            <ul>
+                <li>Video playback.</li>
+                <li>Pause and stop video.</li>
+                <li>Sound and playback speed control.</li>
+            </ul>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Video Playback</h4>
+            <pre style="font-size: 18px;"><code data-trim data-noescape>
+                const video = document.getElementById('myVideo'); // Get the <video> element
+    
+                function playVideo() {
+                    video.play(); // Start video playback
+                }
+    
+                // Call playVideo() function on page load or on event
+                // For example, on button click
+                document.getElementById('playButton').addEventListener('click', playVideo);
+            </code></pre>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Pause and Stop Video</h4>
+            <pre style="font-size: 20px;"><code data-trim data-noescape>
+                function pauseVideo() {
+                    video.pause(); // Pause video playback
+                }
+    
+                function stopVideo() {
+                    video.pause(); // Pause video playback
+                    video.currentTime = 0; // Reset playback time to the beginning
+                }
+            </code></pre>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Sound Control</h4>
+            <pre style="font-size: 20px;"><code data-trim data-noescape>
+                function setVolume(volume) {
+                    video.volume = volume; // Set volume level (0 to 1)
+                }
+    
+                function muteVideo() {
+                    video.muted = true; // Mute video
+                }
+    
+                function unmuteVideo() {
+                    video.muted = false; // Unmute video
+                }
+            </code></pre>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Playback Speed Control</h4>
+            <pre style="font-size: 20px;"><code data-trim data-noescape>
+                function changePlaybackSpeed(speed) {
+                    video.playbackRate = speed; // Set playback speed
+                }
+            </code></pre>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2 style="font-size: 72px; margin-bottom: 25px;">Examples of using <br><span style="color: #0c27ff;">Video API</span></h2>
+            <p>Embedding video on a web page, creating a custom user interface</p>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Embedding Video on a Web Page</h4>
+            <pre style="font-size: 20px;"><code class="language-html"><script type="text/template">
+      <video width="640" height="400" controls loop>
+          <source src="video/sintel-short.mp4" type="video/mp4" />
+          <source src="video/sintel-short.webm" type="video/webm" />
+      </video>
+            </script></code></pre>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Creating a Custom User Interface for Video Player</h4>
+            <pre style="font-size: 18px;"><code class="language-html"><script type="text/template">
+      <div class="controls">
+          <button class="play" aria-label="play pause toggle"></button>
+          <button class="stop" aria-label="stop"></button>
+          <div class="timer">
+              <div></div>
+              <span aria-label="timer">00:00</span>
+          </div>
+          <button class="rwd" aria-label="rewind"></button>
+          <button class="fwd" aria-label="fast forward"></button>
+      </div>
+            </script></code></pre>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Demonstration of Code</h2>
+            <p>Code examples for controlling video using Video API.</p>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Playback and Pause Video</h4>
+            <pre style="font-size: 20px;"><code class="language-js" data-trim data-noescape>
+                const video = document.getElementById('myVideo');
+    
+                playButton.addEventListener('click', () => {
+                    video.play();
+                });
+    
+                pauseButton.addEventListener('click', () => {
+                    video.pause();
+                });
+            </code></pre>
+            <h4 style="margin-bottom: 25px;">Stop Video</h4>
+            <pre style="font-size: 20px;"><code class="language-js" data-trim data-noescape>
+                stopButton.addEventListener('click', () => {
+                    video.currentTime = 0;
+                    video.pause();
+                });
+            </code></pre>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Seek Video</h4>
+            <pre style="font-size: 20px;"><code class="language-js" data-trim data-noescape>
+                const seekSlider = document.getElementById('seekSlider');
+    
+                seekSlider.addEventListener('input', () => {
+                    const seekPercent = seekSlider.value / 100;
+                    video.currentTime = video.duration * seekPercent;
+                });
+            </code></pre>
+            <h4 style="margin-bottom: 25px;">Volume Control</h4>
+            <pre style="font-size: 20px;"><code class="language-js" data-trim data-noescape>
+                const volumeSlider = document.getElementById('volumeSlider');
+    
+                volumeSlider.addEventListener('input', () => {
+                    video.volume = volumeSlider.value / 100;
+                });
+            </code></pre>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Get Video Information</h4>
+            <pre style="font-size: 20px;"><code class="language-js" data-trim data-noescape>
+                const videoDuration = video.duration;
+                const videoWidth = video.videoWidth;
+                const videoHeight = video.videoHeight;
+    
+                console.log('Duration:', videoDuration);
+                console.log('Width:', videoWidth);
+                console.log('Height:', videoHeight);
+            </code></pre>
+        </section>
+        <section>
+            <h4 style="margin-bottom: 25px;">Additional Features</h4>
+            <h5 style="margin-bottom: 25px; font-size: 25px;">Enable Fullscreen Mode</h5>
+            <pre style="font-size: 20px;"><code class="language-js" data-trim data-noescape>
+                video.requestFullscreen();
+            </code></pre>
+            <h5 style="margin-bottom: 25px; font-size: 25px;">Mute Video</h5>
+            <pre style="font-size: 20px;"><code class="language-js" data-trim data-noescape>
+                video.muted = true;
+            </code></pre>
+            <h5 style="margin-bottom: 25px; font-size: 25px;">Show Player Controls</h5>
+            <pre style="font-size: 20px;"><code class="language-js" data-trim data-noescape>
+                video.controls = true;
+            </code></pre>
+        </section>
+    </section>
+    <section>
+        <h2>Conclusion</h2>
+        <p>Summary and recommendations for further study of Video API.</p>
+    </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+        progress: false,
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
